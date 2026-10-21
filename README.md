@@ -11,12 +11,15 @@ sha256 matches `SHA256SUMS`.
 
 ## Setup (one time)
 
-    mkdir -p ~/macremote ~/Library/LaunchAgents
-    cd ~/macremote
-    curl -fsSL https://raw.githubusercontent.com/flcrom/mac-remote/main/run.sh -o run.sh
+    mkdir -p ~/"Library/Application Support/macremote" ~/Library/LaunchAgents
+    curl -fsSL https://raw.githubusercontent.com/flcrom/mac-remote/main/run.sh -o ~/"Library/Application Support/macremote/run.sh"
     curl -fsSL https://raw.githubusercontent.com/flcrom/mac-remote/main/dev.flcrom.macremote.plist -o ~/Library/LaunchAgents/dev.flcrom.macremote.plist
-    chmod +x run.sh
+    chmod +x ~/"Library/Application Support/macremote/run.sh"
     launchctl load -w ~/Library/LaunchAgents/dev.flcrom.macremote.plist
+
+Runtime files live in ~/Library/Application Support/macremote (NOT ~/Documents:
+launchd agents are TCC-blocked from Documents with no way to prompt). The
+project folder is just a git checkout for reading/editing.
 
 ## Updating the receiver
 

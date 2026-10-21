@@ -4,7 +4,7 @@
 # Trust model: code is fetched only from flcrom's own repo over HTTPS, and a
 # new receiver is installed only if its sha256 matches the repo's SHA256SUMS.
 BASE="https://raw.githubusercontent.com/flcrom/mac-remote/main"
-DIR="$HOME/macremote"
+DIR="$HOME/Library/Application Support/macremote"
 mkdir -p "$DIR"; cd "$DIR" || exit 1
 while true; do
   remote_sum=$(curl -fsSL --max-time 10 "$BASE/SHA256SUMS" 2>/dev/null | awk '{print $1}')

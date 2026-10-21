@@ -8,7 +8,7 @@
 	<array>
 		<string>/bin/bash</string>
 		<string>-c</string>
-		<string>"$HOME"/macremote/run.sh</string>
+		<string>"$HOME/Library/Application Support/macremote/run.sh"</string>
 	</array>
 	<key>RunAtLoad</key>
 	<true/>
