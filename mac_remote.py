@@ -210,7 +210,7 @@ def run(cmd):
             err = r.stderr.decode(errors='replace').strip()
             print('%s -> %s FAILED (%.0f ms): %s' % (cmd, route, ms, err[:160]), flush=True)
             if 'assistive' in err.lower() or 'not allowed' in err.lower():
-                print('>> grant Accessibility to Terminal: System Settings -> Privacy & Security -> Accessibility', flush=True)
+                print('>> grant Accessibility to the process running this script: System Settings -> Privacy & Security -> Accessibility -> add /usr/bin/python3 AND /usr/bin/osascript (Cmd+Shift+G in the file picker). Under launchd, Terminal\'s grant does not apply.', flush=True)
         else:
             print('%s -> %s ok (%.0f ms)' % (cmd, route, ms), flush=True)
     except Exception as e:
